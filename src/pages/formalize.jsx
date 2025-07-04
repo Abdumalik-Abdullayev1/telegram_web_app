@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaCreditCard, FaMoneyBillWave } from "react-icons/fa";
+import { FaRegCircleCheck } from "react-icons/fa6";
 import PayMe from '../assets/payme.png';
 import Click from '../assets/clickUp.png';
 
@@ -27,6 +28,7 @@ const paymentOptions = [
 ];
 
 const Checkout = () => {
+    const [showModal, setShowModal] = useState(false);
     const [selectedPayment, setSelectedPayment] = useState("card");
     const [address, setAddress] = useState("");
     const [note, setNote] = useState("");
@@ -82,9 +84,28 @@ const Checkout = () => {
                 </div>
 
             </div>
-            <button className='bg-[rgb(22,113,98)] w-full py-2 text-white rounded-md fixed bottom-20 right-0 left-0'>
+            <button onClick={() => setShowModal(true)} className='bg-[rgb(22,113,98)] w-full py-2 text-white rounded-md fixed bottom-20 right-0 left-0'>
                 Buyurtma berish
             </button>
+            {showModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white rounded-lg p-6 w-80 shadow-lg text-center relative">
+                        <FaRegCircleCheck className='flex justify-center w-full text-4xl text-green-600' />
+                        <h3 className="text-lg font-semibold my-5 mb-14">Buyurtmangizni tasdiqlandi</h3>
+                        <div className="flex justify-around mt-4">
+                            <Link
+                                to="/"
+                                className="w-1/2 absolute bottom-0 right-0 py-2 border-t-2"
+                                onClick={() => {
+                                    setShowModal(false);
+                                }}
+                            >
+                                Ha
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
