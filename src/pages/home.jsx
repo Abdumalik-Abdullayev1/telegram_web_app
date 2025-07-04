@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdLocationPin, MdLocalPhone } from "react-icons/md";
 import { IoCalendar } from "react-icons/io5";
-import Hero from '../assets/hero.svg'
+import Hero from '../assets/hero.png'
 
 const App = () => {
   return (
