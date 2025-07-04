@@ -1,18 +1,92 @@
-import React from 'react'
+import React, { useState } from "react";
+import { FaCreditCard, FaMoneyBillWave } from "react-icons/fa";
+import PayMe from '../assets/payme.png';
+import Click from '../assets/clickUp.png';
 
-const Formalize = () => {
-  return (
-    <div className='px-2'>
-      <h2 className='text-4xl font-bold'>Rasmiylashtirish</h2>
-      <div className='p-5'>
-        <p className='font-semibold text-lg'>To'lov turini tanlang</p>
-        <div className='border-b-gray-500'>
-            <p>Karta bilan (Uzcard, Humo)</p>
-            <input type="radio" />
+const paymentOptions = [
+    {
+        id: "card",
+        label: "Karta bilan (Uzcard, Humo)",
+        icon: <FaCreditCard />,
+    },
+    {
+        id: "payme",
+        label: "Payme",
+        icon: <img src={PayMe} alt="Payme" className="w-6 h-6" />,
+    },
+    {
+        id: "click",
+        label: "Click",
+        icon: <img src={Click} alt="Click" className="w-6 h-6" />,
+    },
+    {
+        id: "cash",
+        label: "Naqd pul orqali",
+        icon: <FaMoneyBillWave />,
+    },
+];
+
+const Checkout = () => {
+    const [selectedPayment, setSelectedPayment] = useState("card");
+    const [address, setAddress] = useState("");
+    const [note, setNote] = useState("");
+
+    return (
+        <div>
+            <div className="max-w-md mx-auto p-4 bg-white min-h-screen">
+                <h1 className="text-2xl font-bold mb-4">Rasmiylashtirish</h1>
+
+                <h2 className="text-sm font-semibold mb-2">To‘lov turini tanlang</h2>
+                <div className="space-y-3 mb-6">
+                    {paymentOptions.map((option) => (
+                        <button
+                            key={option.id}
+                            onClick={() => setSelectedPayment(option.id)}
+                            className={`w-full flex items-center gap-3 p-3 rounded-lg border ${selectedPayment === option.id
+                                ? "bg-green-100 border-green-600"
+                                : "bg-gray-100 border-transparent"
+                                }`}
+                        >
+                            <span className="text-xl">{option.icon}</span>
+                            <span className="text-sm font-medium">{option.label}</span>
+                            <span className="ml-auto">
+                                {selectedPayment === option.id && (
+                                    <span className="w-4 h-4 rounded-full bg-green-600 inline-block" />
+                                )}
+                            </span>
+                        </button>
+                    ))}
+                </div>
+
+                <div className="mb-4">
+                    <label className="block text-sm font-semibold mb-1">
+                        Manzilingizni kiriting
+                    </label>
+                    <input
+                        type="text"
+                        className="w-full p-3 rounded-md border border-gray-300"
+                        placeholder="Manzil..."
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                    />
+                </div>
+
+                <div className="mb-6">
+                    <input
+                        type="text"
+                        className="w-full p-3 rounded-md border border-gray-200 text-gray-600"
+                        placeholder="Qo‘shimcha izoh"
+                        value={note}
+                        onChange={(e) => setNote(e.target.value)}
+                    />
+                </div>
+
+            </div>
+            <button className='bg-[rgb(22,113,98)] w-full py-2 text-white rounded-md fixed bottom-20 right-0 left-0'>
+                Buyurtma berish
+            </button>
         </div>
-      </div>
-    </div>
-  )
-}
+    );
+};
 
-export default Formalize
+export default Checkout;
