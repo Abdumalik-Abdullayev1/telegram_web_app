@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaCreditCard, FaMoneyBillWave } from "react-icons/fa";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import PayMe from '../assets/payme.png';
@@ -95,12 +96,12 @@ const Checkout = () => {
                         <div className="flex justify-around mt-4">
                             <Link
                                 to="/"
-                                className="w-1/2 absolute bottom-0 right-0 py-2 border-t-2"
+                                className="w-full absolute bottom-0 right-0 py-2 border-t-2"
                                 onClick={() => {
                                     setShowModal(false);
                                 }}
                             >
-                                Ha
+                                Bosh sahifaga qaytish
                             </Link>
                         </div>
                     </div>
