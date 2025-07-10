@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { IoMdSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
-import { initialCategories, products } from '../components/lists';
+import { allCategory, products } from '../components/lists';
 
 const Shop = () => {
   const [counts, setCounts] = useState({});
-  const [categories, setCategories] = useState(initialCategories);
+  const [categories, setCategories] = useState(allCategory);
   const handleCategoryClick = (index) => {
     const updatedCategories = categories.map((cat, i) => ({
       ...cat,
@@ -48,8 +48,8 @@ const Shop = () => {
   };
 
   return (
-    <div className="px-2 mb-16">
-      <div className="flex items-center border border-black justify-between p-2 rounded-xl px-5">
+    <div className="px-2 mb-16 xl:px-10">
+      <div className="flex items-center md:max-w-lg border justify-between p-2 rounded-xl px-5">
         <input
           type="text"
           placeholder="Qidiruv..."
@@ -64,8 +64,8 @@ const Shop = () => {
             Barchasini ko‘rish
           </Link>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {categories.map((cat, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:grid-cols-6">
+          {categories.slice(0, 6).map((cat, index) => (
             <div
               key={index}
               onClick={() => handleCategoryClick(index)}
@@ -79,21 +79,21 @@ const Shop = () => {
         </div>
         <div className='my-5'>
           <h2 className='font-bold text-2xl my-5'>Mahsulotlar</h2>
-          <div className='grid grid-cols-2 gap-2'>
+          <div className='grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4'>
             {products.map((product) => {
               const productInCart = counts[product.id];
 
               return (
                 <div key={product.id}>
                   <Link to='/detail' className='bg-slate-300 rounded-t-lg flex justify-center'>
-                    <img src={product.image} alt={product.title} className="w-32 h-32 object-cover" />
+                    <img src={product.image} alt={product.title} className="sm:w-44 sm:h-44 lg:w-48 lg:h-48 object-cover" />
                   </Link>
                   <div className='p-2'>
                     <h3 className='text-lg font-semibold'>{product.title}</h3>
                     <p className='text-lg font-bold'>${product.price}</p>
 
                     {productInCart ? (
-                      <div className='flex justify-between items-center bg-[rgb(22,113,98)] text-white py-1 rounded mt-2 w-full text-xl'>
+                      <div className='flex justify-between items-center bg-[rgb(22,113,98)] text-white py-1 rounded mt-1 w-full text-xl'>
                         <button onClick={() => handleRemove(product.id)} className="px-3">−</button>
                         <span>{productInCart.count}</span>
                         <button onClick={() => handleAdd(product)} className="px-3">+</button>
@@ -101,7 +101,7 @@ const Shop = () => {
                     ) : (
                       <button
                         onClick={() => handleAdd(product)}
-                        className='bg-[rgb(22,113,98)] text-white py-1 rounded mt-2 w-full flex justify-center text-2xl'
+                        className='bg-[rgb(22,113,98)] text-white py-2 rounded mt-1 w-full flex justify-center text-2xl'
                       >
                         {product.basket}
                       </button>

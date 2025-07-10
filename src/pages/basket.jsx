@@ -42,20 +42,26 @@ const Basket = () => {
   };
 
   return (
-    <div className='px-3'>
+    <div className='px-3 xl:px-10'>
       <h2 className='text-3xl font-bold'>Savat</h2>
 
       {basketItems.length === 0 ? (
-        <div className='w-full py-20 bg-gray-300 rounded-lg flex flex-col items-center mt-5'>
-          <BsBagHeart className='text-5xl text-[rgb(22,113,98)] mb-3' />
-          <p className='text-lg text-gray-600'>Sizning savatingiz bo'sh.</p>
+        <div>
+          <div className='max-w-xl mx-auto py-20 bg-gray-300 rounded-lg flex flex-col items-center mt-5 md:hidden'>
+            <BsBagHeart className='text-5xl text-[rgb(22,113,98)] mb-3' />
+            <p className='text-lg text-gray-600'>Sizning savatingiz bo'sh.</p>
+          </div>
+          <div className='hidden max-w-xl mx-auto py-44 rounded-lg md:flex flex-col items-center justify-center mt-5'>
+            <BsBagHeart className='text-5xl text-[rgb(22,113,98)] mb-3' />
+            <p className='text-lg text-gray-600'>Sizning savatingiz bo'sh.</p>
+          </div>
         </div>
       ) : (
-        <div className='mt-5 space-y-4'>
+        <div className='mt-5 space-y-4 grid md:grid-cols-2 items-center md:space-y-0 gap-3 lg:grid-cols-3 xl:grid-cols-4'>
           {basketItems.map((item, index) => (
             <div
               key={item.id || index}
-              className="flex items-center gap-4 bg-white rounded-xl shadow-md p-2 border"
+              className="flex max-w-md items-center gap-4 bg-white rounded-xl shadow-md p-2 border"
             >
               <div className="rounded-xl">
                 <img src={item.image} alt={item.title} className="object-contain w-24 h-24" />
@@ -101,7 +107,7 @@ const Basket = () => {
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-80 shadow-lg text-center relative">
-            <PiWarningCircle className='flex justify-center w-full text-4xl text-orange-400'/>
+            <PiWarningCircle className='flex justify-center w-full text-4xl text-orange-400' />
             <h3 className="text-lg font-semibold my-5 mb-14">Buyurtmangizni tasdiqlaysizmi?</h3>
             <div className="flex justify-around mt-4">
               <button
@@ -110,7 +116,7 @@ const Basket = () => {
               >
                 Yo'q
               </button>
-              <Link 
+              <Link
                 to="/formalize"
                 className="w-1/2 absolute bottom-0 right-0 py-2 border-t-2"
                 onClick={() => {

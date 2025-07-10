@@ -20,13 +20,12 @@ const Detail = () => {
     }, []);
 
     return (
-        <div className='mb-32'>
-            <div className='flex'>
-                <img src={Iphone} alt="img1" className='mx-auto w-full' />
-                <img src={Iphone2} alt="img2" className='mx-auto w-full' />
+        <div className='mb-32 grid sm:grid-cols-3 lg:grid-cols-4 gap-5 sm:px-5 xl:px-10'>
+            <div className='grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 sm:col-span-1 md:col-span-2'>
+                <img src={Iphone} alt="img1" className='mx-auto w-full rounded-xl' />
+                <img src={Iphone2} alt="img2" className='mx-auto w-full rounded-xl' />
             </div>
-
-            <div className='px-2'>
+            <div className='px-2 sm:col-span-2 md:col-span-1 lg:col-span-2'>
                 <h2 className='text-xl font-bold mt-2'>iPhone 14 Pro Max</h2>
                 <p className='text-4xl font-bold my-3'>7 860 000 UZS</p>
                 <p className='text-slate-500'>

@@ -3,9 +3,9 @@ import iphone from '../assets/reportImg.png'
 
 const Report = () => {
   return (
-    <div className='px-2'>
+    <div className='px-2 xl:px-10'>
       <h1 className='font-bold text-4xl'>Hisobot</h1>
-      <div className='bg-slate-100 p-3 rounded-lg'>
+      <div className='bg-slate-100 p-3 rounded-lg max-w-sm my-10'>
         <div className='bg-slate-300 p-2 rounded-lg flex items-center gap-5 my-5'>
           <img src={iphone} alt="sdfg" className='w-10' />
           <p className='font-semibold text-lg'>iPhone 14 Pro Max</p>
