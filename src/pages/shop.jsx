@@ -53,7 +53,7 @@ const Shop = () => {
         <input
           type="text"
           placeholder="Qidiruv..."
-          className="text-lg w-full outline-none"
+          className="text-lg w-full outline-none px-3 bg-transparent text-gray-800 placeholder-gray-500 focus:border-[rgb(22,113,98)] focus:ring-0 focus:outline-none dark:text-white"
         />
         <IoMdSearch className="text-2xl" />
       </div>
@@ -69,7 +69,7 @@ const Shop = () => {
             <div
               key={index}
               onClick={() => handleCategoryClick(index)}
-              className={`cursor-pointer flex flex-col items-center justify-center text-center transition-all duration-300 ${cat.active ? "text-[rgb(22,113,98)]" : "text-gray-800"}`} >
+              className={`cursor-pointer flex flex-col items-center justify-center text-center transition-all duration-300 ${cat.active ? "text-[rgb(22,113,98)]" : "text-gray-800 dark:text-white"}`} >
               <div className={`w-24 h-24 rounded-full flex items-center justify-center mb-2 shadow-md ${cat.active ? "bg-[rgb(22,113,98)]" : "bg-gray-100"}`}>
                 <img src={cat.image} alt={cat.title} className="w-14 h-14 object-contain" />
               </div>

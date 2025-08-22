@@ -68,25 +68,25 @@ const Basket = () => {
               </div>
               <div className='w-2/3'>
                 <div className='w-full'>
-                  <p className="text-lg font-bold">{item.title}</p>
+                  <p className="text-lg font-bold dark:text-black">{item.title}</p>
                   <p className="text-gray-500 text-sm">Rangi: Gray</p>
                 </div>
                 <div className='flex items-end justify-between'>
                   <div>
-                    <p className="text-xl font-bold mt-1">
+                    <p className="text-xl font-bold mt-1 dark:text-black">
                       ${(item.price * item.count).toLocaleString()}
                     </p>
                     <p className="text-gray-500 mt-1 text-sm">Miqdori: {item.count}</p>
                   </div>
                   <div className="flex items-center bg-slate-100 rounded-lg px-2">
                     <button
-                      className="text-xl px-2"
+                      className="text-xl px-2 dark:text-black"
                       onClick={() => handleDecrement(index)}
                     >
                       −
                     </button>
                     <button
-                      className="text-xl px-2"
+                      className="text-xl px-2 dark:text-black"
                       onClick={() => handleIncrement(index)}
                     >
                       +
