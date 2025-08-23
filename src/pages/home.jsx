@@ -5,7 +5,7 @@ import Hero from '../assets/hero.png'
 
 const App = () => {
   return (
-    <div className='px-2 mb-24 xl:px-10 mt-5'>
+    <div className='px-2 mb-24 xl:px-10 mt-24'>
       <div className='sm:flex gap-3'>
         <img src={Hero} alt="Hero" className='w-full mx-auto rounded-lg' />
         <div>

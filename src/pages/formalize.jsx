@@ -36,11 +36,11 @@ const Checkout = () => {
 
     return (
         <div>
-            <div className="max-w-md mx-auto p-4 bg-white min-h-screen">
+            <div className="max-w-md mx-auto p-4 bg-white min-h-screen mt-24 dark:bg-gray-900">
                 <h1 className="text-2xl font-bold mb-4">Rasmiylashtirish</h1>
 
                 <h2 className="text-sm font-semibold mb-2">To‘lov turini tanlang</h2>
-                <div className="space-y-3 mb-6">
+                <div className="space-y-3 mb-6 dark:text-black">
                     {paymentOptions.map((option) => (
                         <button
                             key={option.id}
@@ -67,7 +67,7 @@ const Checkout = () => {
                     </label>
                     <input
                         type="text"
-                        className="w-full p-3 rounded-md border border-gray-300"
+                        className="w-full p-3 rounded-md border border-gray-300 dark:text-black outline-none"
                         placeholder="Manzil..."
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
@@ -77,7 +77,7 @@ const Checkout = () => {
                 <div className="mb-6">
                     <input
                         type="text"
-                        className="w-full p-3 rounded-md border border-gray-200 text-gray-600"
+                        className="w-full p-3 rounded-md border border-gray-200 text-gray-600 outline-none"
                         placeholder="Qo‘shimcha izoh"
                         value={note}
                         onChange={(e) => setNote(e.target.value)}
@@ -92,11 +92,11 @@ const Checkout = () => {
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div className="bg-white rounded-lg p-6 w-80 shadow-lg text-center relative">
                         <FaRegCircleCheck className='flex justify-center w-full text-4xl text-green-600' />
-                        <h3 className="text-lg font-semibold my-5 mb-14">Buyurtmangizni tasdiqlandi</h3>
+                        <h3 className="text-lg font-semibold my-5 mb-14 dark:text-black">Buyurtmangizni tasdiqlandi</h3>
                         <div className="flex justify-around mt-4">
                             <Link
                                 to="/"
-                                className="w-full absolute bottom-0 right-0 py-2 border-t-2"
+                                className="w-full absolute bottom-0 right-0 py-2 border-t-2 dark:text-black"
                                 onClick={() => {
                                     setShowModal(false);
                                 }}

@@ -17,7 +17,7 @@ const Header = () => {
     }, [theme]);
 
     return (
-        <div className="px-2 xl:px-10 py-1 dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-md">
+        <div className="px-5 xl:px-10 py-2 dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-md fixed w-full top-0">
             <div className="my-3 flex items-center justify-between">
                 {/* Logo */}
                 <img src={Logo} alt="Logo" className="h-10" />

@@ -42,12 +42,12 @@ const Basket = () => {
   };
 
   return (
-    <div className='px-3 xl:px-10'>
+    <div className='px-3 xl:px-10 mt-24'>
       <h2 className='text-3xl font-bold'>Savat</h2>
 
       {basketItems.length === 0 ? (
         <div>
-          <div className='max-w-xl mx-auto py-20 bg-gray-300 rounded-lg flex flex-col items-center mt-5 md:hidden'>
+          <div className='max-w-xl mx-auto py-20 bg-gray-300 dark:bg-transparent rounded-lg flex flex-col items-center mt-5 md:hidden'>
             <BsBagHeart className='text-5xl text-[rgb(22,113,98)] mb-3' />
             <p className='text-lg text-gray-600'>Sizning savatingiz bo'sh.</p>
           </div>
@@ -108,17 +108,17 @@ const Basket = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-80 shadow-lg text-center relative">
             <PiWarningCircle className='flex justify-center w-full text-4xl text-orange-400' />
-            <h3 className="text-lg font-semibold my-5 mb-14">Buyurtmangizni tasdiqlaysizmi?</h3>
+            <h3 className="text-lg font-semibold my-5 mb-14 dark:text-black">Buyurtmangizni tasdiqlaysizmi?</h3>
             <div className="flex justify-around mt-4">
               <button
-                className="w-1/2 absolute bottom-0 left-0 py-2 border-r-2 border-t-2"
+                className="w-1/2 absolute bottom-0 left-0 py-2 border-r-2 border-t-2 dark:text-black"
                 onClick={() => setShowModal(false)}
               >
                 Yo'q
               </button>
               <Link
                 to="/formalize"
-                className="w-1/2 absolute bottom-0 right-0 py-2 border-t-2"
+                className="w-1/2 absolute bottom-0 right-0 py-2 border-t-2 dark:text-black"
                 onClick={() => {
                   setShowModal(false);
                 }}

@@ -20,7 +20,7 @@ const Detail = () => {
     }, []);
 
     return (
-        <div className='mb-32 grid sm:grid-cols-3 lg:grid-cols-4 gap-5 sm:px-5 xl:px-10'>
+        <div className='mb-32 grid sm:grid-cols-3 lg:grid-cols-4 gap-5 sm:px-5 xl:px-10 mt-24'>
             <div className='grid grid-cols-2 sm:grid-cols-1 md:grid-cols-2 sm:col-span-1 md:col-span-2'>
                 <img src={Iphone} alt="img1" className='mx-auto w-full rounded-xl' />
                 <img src={Iphone2} alt="img2" className='mx-auto w-full rounded-xl' />
@@ -70,7 +70,7 @@ const Detail = () => {
                 <>
                     <Link
                         to={'/shop'}
-                        className='w-full py-2 rounded-md fixed text-center text-[rgb(22,113,98)] underline bottom-10 right-0 left-0 bg-white'
+                        className='w-full py-2 rounded-md fixed text-center text-[rgb(22,113,98)] underline bottom-10 right-0 left-0 bg-white dark:bg-gray-900 dark:text-white'
                     >
                         Xaridlarga qaytish
                     </Link>

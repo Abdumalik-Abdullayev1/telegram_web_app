@@ -48,7 +48,7 @@ const Shop = () => {
   };
 
   return (
-    <div className="px-2 mb-16 xl:px-10">
+    <div className="px-2 mb-16 xl:px-10 mt-24">
       <div className="flex items-center md:max-w-lg border justify-between p-2 rounded-xl px-5">
         <input
           type="text"
